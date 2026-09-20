@@ -153,4 +153,11 @@
   width: 100%;
   padding: 8px;
   border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.397) 3px 2px 3px;
+  transition: 0.8s;
+}
+.add-to-cart-button:hover
+{
+  transform: scale(0.93);
+  box-shadow: rgba(0, 0, 0, 0.397) 1px 0.5px 3px;
 }
