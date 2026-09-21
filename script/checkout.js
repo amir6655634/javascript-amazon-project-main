@@ -1,16 +1,16 @@
 let productOrderHTML = ''
 cart.forEach((cartItem) => {
-    const productId = cart.productId
+    const productId = cartItem.productId
     let matchingProduct;
     products.forEach((product) =>{
         
-        if(products.id == productId){
+        if(product.id === productId){
             matchingProduct = product
         }
 
     })
 
-    console.log(matchingProduct.image);
+    console.log(matchingProduct);
 
    productOrderHTML += `
             <div class="cart-item-container">
