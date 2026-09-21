@@ -205,7 +205,12 @@
   padding-top: 12px;
   padding-bottom: 12px;
   border-radius: 8px;
-
+  transition: 1s;
   margin-top: 11px;
   margin-bottom: 15px;
+}
+.place-order-button:hover
+{
+  background-color: rgb(11, 204, 11);
+  border-color: rgb(0, 88, 0);
 }
