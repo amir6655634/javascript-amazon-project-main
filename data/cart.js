@@ -59,3 +59,17 @@ function removeProduct(productId){
   cart = newCart;
   saveToStorage()
 }
+
+function updateDeliveryDate(productId, deliveryOptionId){
+    let matchId;
+
+    cart.forEach((item) => {
+      if(productId === item.productId){
+        matchId = item
+      }
+    })
+
+    matchId.deliveryOptionId = deliveryOptionId;
+
+    saveToStorage()
+}

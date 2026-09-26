@@ -74,9 +74,10 @@ function deliveryOptionsHTML(matchingProduct, cartItem){
         const dateString = deliveryDate.format('dddd, MMMM D')
         const priceString = deliveryOption.priceCents === 0 ? 'FREE' : `$${(deliveryOption.priceCents / 100).toFixed(2)}`
         const isChecked = deliveryOption.id === cartItem.deliveryOptionId;
-        console.log(isChecked)
         html += `
-            <div class="delivery-option">
+            <div class="delivery-option js-delivery-option"
+            data-product-id = '${matchingProduct.id}'
+            data-delivery-option-id = '${deliveryOption.id}'>
                 <input type="radio"
                 ${isChecked ? 'checked' : ''}
                 class="delivery-option-input"
@@ -104,5 +105,11 @@ document.querySelectorAll(".js-delete-link").forEach((link) =>{
        const productRemove = document.querySelector(`.js-cart-item-container-${productId}`)
 
        productRemove.remove()
+    })
+})
+document.querySelectorAll('.js-delivery-option').forEach((element) => {
+    element.addEventListener('click', () => {
+        const {productId, deliveryOptionId} = element.dataset
+        updateDeliveryDate(productId, deliveryOptionId)
     })
 })
